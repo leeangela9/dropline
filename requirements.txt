@@ -1,0 +1,8 @@
+# Runtime dependencies, all pinned (direct and transitive).
+Django==5.2.19
+djangorestframework==3.18.3
+psycopg[binary]==3.3.9
+asgiref==3.13.0
+psycopg-binary==3.3.9
+sqlparse==0.6.1
+typing_extensions==4.16.0

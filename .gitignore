@@ -1,0 +1,15 @@
+# Private planning notes, not for the public repo
+dropline-practice-project.md
+
+# Local config and secrets
+.env
+
+# Python / tooling
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.ruff_cache/
+
+# Personal Claude Code overrides
+.claude/settings.local.json
