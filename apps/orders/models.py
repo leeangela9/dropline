@@ -2,6 +2,9 @@ from django.db import models
 
 from apps.partners.models import Retailer, Supplier
 
+# Named here so the service that maps this violation to a 409 cannot drift from the schema.
+ORDER_UNIQUE_PO_CONSTRAINT = "orders_order_unique_retailer_po"
+
 
 class OrderStatus(models.TextChoices):
     RECEIVED = "received"
@@ -34,7 +37,7 @@ class Order(models.Model):
         constraints = [
             models.UniqueConstraint(
                 fields=["retailer", "external_po_number"],
-                name="orders_order_unique_retailer_po",
+                name=ORDER_UNIQUE_PO_CONSTRAINT,
             ),
         ]
 
