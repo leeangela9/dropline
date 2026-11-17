@@ -76,5 +76,15 @@ TIME_ZONE = "UTC"
 USE_I18N = True
 USE_TZ = True
 
+REST_FRAMEWORK = {
+    "DEFAULT_RENDERER_CLASSES": ["rest_framework.renderers.JSONRenderer"],
+    "DEFAULT_PARSER_CLASSES": ["rest_framework.parsers.JSONParser"],
+    # The API is open until T0.4 adds per-retailer API keys.
+    "DEFAULT_AUTHENTICATION_CLASSES": [],
+    "DEFAULT_PERMISSION_CLASSES": [],
+    "EXCEPTION_HANDLER": "dropline.api.exception_handler",
+    "TEST_REQUEST_DEFAULT_FORMAT": "json",
+}
+
 STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
